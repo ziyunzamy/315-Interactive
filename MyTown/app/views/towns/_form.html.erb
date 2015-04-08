@@ -1,37 +1,26 @@
-<%= form_for(@town) do |f| %>
-  <% if @town.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@town.errors.count, "error") %> prohibited this town from being saved:</h2>
+ <%= simple_nested_form_for @town, :html => { :class => 'form-horizontal' } do |town_form| %>
+    <div class="row">
+      <div class="span7">
+        <fieldset>
+          <legend><%= controller.action_name.capitalize %> Town</legend>
+          <%= render :partial => "town_fields", :locals => { :f => town_form } %>
+        </fieldset>
+      </div>
 
-      <ul>
-      <% @town.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <div class="span5">
+      <legend>Attractions for this town</legend>
+        <div id="town_attractions">
+          <%= town_form.simple_fields_for :attractions do |attraction_form| %>
+            <%= render :partial => "attraction_fields", :locals => { :f => attraction_form } %>
+          <% end %> 
+          <p>
+            <br /><%= town_form.link_to_add("Add Attraction", :attractions, :class => 'button tiny') %>
+          </p>
+        </div> 
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= town_form.submit nil, :class => 'button radius' %>
+      <%= link_to 'Cancel', towns_path, :class => 'button secondary' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

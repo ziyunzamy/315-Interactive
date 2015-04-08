@@ -63,6 +63,7 @@ GEM
     mocha (1.1.0)
       metaclass (~> 0.0.1)
     multi_json (1.11.0)
+    nested_form (0.3.2)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -139,6 +140,7 @@ DEPENDENCIES
   jquery-rails
   materialize-sass
   mocha
+  nested_form
   rails (= 4.0.13)
   sass-rails (~> 4.0.2)
   sdoc
