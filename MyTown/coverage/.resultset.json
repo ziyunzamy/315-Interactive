@@ -1,0 +1,32 @@
+{
+  "MiniTest": {
+    "coverage": {
+      "/Users/ziyunzheng/Desktop/MyTown/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/ziyunzheng/Desktop/MyTown/app/helpers/attractions_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/ziyunzheng/Desktop/MyTown/app/helpers/towns_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/ziyunzheng/Desktop/MyTown/app/models/attraction.rb": [
+        1,
+        1,
+        2,
+        null
+      ],
+      "/Users/ziyunzheng/Desktop/MyTown/app/models/town.rb": [
+        1,
+        1,
+        1,
+        2,
+        null
+      ]
+    },
+    "timestamp": 1428510102
+  }
+}
