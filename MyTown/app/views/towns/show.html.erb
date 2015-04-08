@@ -32,6 +32,7 @@
         <li><%= attraction.name %> - <%= attraction.street %></li>
       <% end %>
     </ol>
+    <%= image_tag @town.create_map_link %>
   </p>
 <%= link_to 'Edit', edit_town_path(@town) %> |
 <%= link_to 'Back', towns_path %>

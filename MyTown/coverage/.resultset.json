@@ -17,16 +17,43 @@
         1,
         1,
         2,
+        null,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
+        0,
+        null,
+        2,
+        null,
         null
       ],
       "/Users/ziyunzheng/Desktop/MyTown/app/models/town.rb": [
         1,
         1,
+        null,
+        1,
         1,
         2,
+        1,
+        1,
+        1,
+        9,
+        9,
+        8,
+        8,
+        null,
+        1,
+        null,
+        9,
+        null,
         null
       ]
     },
-    "timestamp": 1428510102
+    "timestamp": 1428513891
   }
 }

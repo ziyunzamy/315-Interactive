@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-04-08T12:21:42-04:00">2015-04-08T12:21:42-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-04-08T13:24:51-04:00">2015-04-08T13:24:51-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="green">96.55%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.21
+         2.52
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>5</b> files in total.
-    <b>10</b> relevant lines. 
-    <span class="green"><b>10</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>29</b> relevant lines. 
+    <span class="green"><b>28</b> lines covered</span> and
+    <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -82,22 +82,22 @@
       
       <tr>
         <td class="strong"><a href="#2d201b40c2ec343e5f81747ec35224ed6695886e" class="src_link" title="app/models/attraction.rb">app/models/attraction.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>4</td>
-        <td>3</td>
-        <td>3</td>
-        <td>0</td>
-        <td>1.3</td>
+        <td class="green strong">91.67 %</td>
+        <td>17</td>
+        <td>12</td>
+        <td>11</td>
+        <td>1</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#8b488001e739fe48c72a9f1407d0d32c688ab016" class="src_link" title="app/models/town.rb">app/models/town.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>5</td>
-        <td>4</td>
-        <td>4</td>
+        <td>19</td>
+        <td>14</td>
+        <td>14</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>3.8</td>
       </tr>
       
     </tbody>
@@ -146,20 +146,20 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="green">96.15%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.3
+         2.69
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
     <b>2</b> files in total.
-    <b>7</b> relevant lines. 
-    <span class="green"><b>7</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>26</b> relevant lines. 
+    <span class="green"><b>25</b> lines covered</span> and
+    <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -177,22 +177,22 @@
       
       <tr>
         <td class="strong"><a href="#2d201b40c2ec343e5f81747ec35224ed6695886e" class="src_link" title="app/models/attraction.rb">app/models/attraction.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>4</td>
-        <td>3</td>
-        <td>3</td>
-        <td>0</td>
-        <td>1.3</td>
+        <td class="green strong">91.67 %</td>
+        <td>17</td>
+        <td>12</td>
+        <td>11</td>
+        <td>1</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#8b488001e739fe48c72a9f1407d0d32c688ab016" class="src_link" title="app/models/town.rb">app/models/town.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>5</td>
-        <td>4</td>
-        <td>4</td>
+        <td>19</td>
+        <td>14</td>
+        <td>14</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>3.8</td>
       </tr>
       
     </tbody>
@@ -444,11 +444,11 @@
         <div class="source_table" id="2d201b40c2ec343e5f81747ec35224ed6695886e">
   <div class="header">
     <h3>app/models/attraction.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">91.67 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>12</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -476,6 +476,84 @@
         <li class="never" data-hits="" data-linenumber="4">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	before_validation :find_attraction_coordinates, :if =&gt; :street_changed?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	private</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	def find_attraction_coordinates</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    coord = Geocoder.coordinates(&quot;#{street}, #{town.name}, #{town.state}&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    if coord</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      self.latitude = coord[0]</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      self.longitude = coord[1]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    else </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">      errors.add(:base, &quot;Error with geocoding&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="15">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    coord</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
           <code class="ruby">end</code>
         </li>
       
@@ -488,8 +566,8 @@
     <h3>app/models/town.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>14</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -509,19 +587,103 @@
           <code class="ruby">	has_many :attractions, dependent: :destroy</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	before_validation :find_town_coordinates</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
           <code class="ruby">	STATES_LIST = [[&#39;Alabama&#39;, &#39;AL&#39;],[&#39;Alaska&#39;, &#39;AK&#39;],[&#39;Arizona&#39;, &#39;AZ&#39;],[&#39;Arkansas&#39;, &#39;AR&#39;],[&#39;California&#39;, &#39;CA&#39;],[&#39;Colorado&#39;, &#39;CO&#39;],[&#39;Connectict&#39;, &#39;CT&#39;],[&#39;Delaware&#39;, &#39;DE&#39;],[&#39;District of Columbia &#39;, &#39;DC&#39;],[&#39;Florida&#39;, &#39;FL&#39;],[&#39;Georgia&#39;, &#39;GA&#39;],[&#39;Hawaii&#39;, &#39;HI&#39;],[&#39;Idaho&#39;, &#39;ID&#39;],[&#39;Illinois&#39;, &#39;IL&#39;],[&#39;Indiana&#39;, &#39;IN&#39;],[&#39;Iowa&#39;, &#39;IA&#39;],[&#39;Kansas&#39;, &#39;KS&#39;],[&#39;Kentucky&#39;, &#39;KY&#39;],[&#39;Louisiana&#39;, &#39;LA&#39;],[&#39;Maine&#39;, &#39;ME&#39;],[&#39;Maryland&#39;, &#39;MD&#39;],[&#39;Massachusetts&#39;, &#39;MA&#39;],[&#39;Michigan&#39;, &#39;MI&#39;],[&#39;Minnesota&#39;, &#39;MN&#39;],[&#39;Mississippi&#39;, &#39;MS&#39;],[&#39;Missouri&#39;, &#39;MO&#39;],[&#39;Montana&#39;, &#39;MT&#39;],[&#39;Nebraska&#39;, &#39;NE&#39;],[&#39;Nevada&#39;, &#39;NV&#39;],[&#39;New Hampshire&#39;, &#39;NH&#39;],[&#39;New Jersey&#39;, &#39;NJ&#39;],[&#39;New Mexico&#39;, &#39;NM&#39;],[&#39;New York&#39;, &#39;NY&#39;],[&#39;North Carolina&#39;,&#39;NC&#39;],[&#39;North Dakota&#39;, &#39;ND&#39;],[&#39;Ohio&#39;, &#39;OH&#39;],[&#39;Oklahoma&#39;, &#39;OK&#39;],[&#39;Oregon&#39;, &#39;OR&#39;],[&#39;Pennsylvania&#39;, &#39;PA&#39;],[&#39;Rhode Island&#39;, &#39;RI&#39;],[&#39;South Carolina&#39;, &#39;SC&#39;],[&#39;South Dakota&#39;, &#39;SD&#39;],[&#39;Tennessee&#39;, &#39;TN&#39;],[&#39;Texas&#39;, &#39;TX&#39;],[&#39;Utah&#39;, &#39;UT&#39;],[&#39;Vermont&#39;, &#39;VT&#39;],[&#39;Virginia&#39;, &#39;VA&#39;],[&#39;Washington&#39;, &#39;WA&#39;],[&#39;West Virginia&#39;, &#39;WV&#39;],[&#39;Wisconsin &#39;, &#39;WI&#39;],[&#39;Wyoming&#39;, &#39;WY&#39;]]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
+        <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
           <code class="ruby">	scope :alphabetical,  -&gt; { order(:name) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	accepts_nested_attributes_for :attractions, reject_if: lambda { |attraction| attraction[:name].blank? }, allow_destroy: true</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	private</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	def find_town_coordinates</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="10">
+          <span class="hits">9</span>
+          
+          <code class="ruby">    coord = Geocoder.coordinates(&quot;#{name}, #{state}&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="11">
+          <span class="hits">9</span>
+          
+          <code class="ruby">    if coord</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="12">
+          <span class="hits">8</span>
+          
+          <code class="ruby">      self.latitude = coord[0]</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="13">
+          <span class="hits">8</span>
+          
+          <code class="ruby">      self.longitude = coord[1]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">    else </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      errors.add(:base, &quot;Error with geocoding&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="17">
+          <span class="hits">9</span>
+          
+          <code class="ruby">    coord</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>

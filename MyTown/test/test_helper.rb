@@ -13,5 +13,10 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   #fixtures :all
 
+def deny(condition, msg="")
+    # a simple transformation to increase readability IMO
+    assert !condition, msg
+  end
+
   # Add more helper methods to be used by all tests here...
 end
