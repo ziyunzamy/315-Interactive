@@ -1,0 +1,126 @@
+---
+title: "Data Mining Project"
+author: "Amy Zheng"
+date: "4/23/2017"
+output: pdf_document
+---
+
+```{r}
+rm(list=ls())
+flights15 <- read.csv("flights2015.csv")
+flights2015_mod = flights15[, -c(31:33, 35:40, 42:50, 52:53, 57:64)]
+```
+
+```{r}
+#### ORIGIN airport delays ####
+### filter our delayed flights ###
+flights2015_mod_delay <- flights2015_mod[which(flights2015_mod$DEP_DEL15==1),]
+### group by days ###
+delays_by_days <- flights2015_mod_delay %>%
+  group_by(FL_DATE, ORIGIN_AIRPORT_ID) %>%
+  summarize(delays = n())
+### get previous day ###
+delays_by_days_2 <- mutate(delays_by_days, 
+                           FL_DATE_2 = as.character(as.Date(FL_DATE)-1))
+delays_by_days_3 <- left_join(delays_by_days_2, delays_by_days, 
+                 by = c("FL_DATE_2" = "FL_DATE", 
+                        "ORIGIN_AIRPORT_ID" = "ORIGIN_AIRPORT_ID"))
+delays_by_days_3 <- mutate(delays_by_days_3, 
+                           delays_2 = rowSums(cbind(delays.x, delays.y), na.rm=TRUE))
+### add to data set ###
+flights2015_mod_v1 <- left_join(flights2015_mod, delays_by_days_3, 
+                 by = c("FL_DATE" = "FL_DATE", 
+                        "ORIGIN_AIRPORT_ID" = "ORIGIN_AIRPORT_ID"))
+flights2015_mod_v1 <- flights2015_mod_v1[, -c(38:39)]
+```
+
+```{r}
+#### DESTINATION airport delays ####
+### group by days ###
+delays_by_des <- flights2015_mod_v1 %>%
+  group_by(FL_DATE, DEST_AIRPORT_ID) %>%
+  summarize(delays_des = n())
+### get previous day ###
+delays_by_des_2 <- mutate(delays_by_des, 
+                           FL_DATE_2 = as.character(as.Date(FL_DATE)-1))
+delays_by_des_3 <- left_join(delays_by_des_2, delays_by_des, 
+                 by = c("FL_DATE_2" = "FL_DATE", 
+                        "DEST_AIRPORT_ID" = "DEST_AIRPORT_ID"))
+delays_by_des_3 <- mutate(delays_by_des_3, 
+                           delays_2_des = rowSums(cbind(delays_des.x, 
+                                                        delays_des.y), 
+                                                  na.rm=TRUE))
+### add to data set ###
+flights2015_mod_v2 <- left_join(flights2015_mod_v1, delays_by_des_3, 
+                 by = c("FL_DATE" = "FL_DATE", 
+                        "DEST_AIRPORT_ID" = "DEST_AIRPORT_ID"))
+flights2015_mod_v2 <- flights2015_mod_v2[, -c(40:41)]
+```
+
+
+
+```{r}
+#### ORIGIN airport delays ####
+flights16_v <- read.csv("flights2016_visible.csv")
+flights16_g <- read.csv("flights2016_guess.csv")
+### filter our delayed flights ###
+flights16_v_delay <- flights16_v[which(flights16_v$DEP_DEL15==1),]
+### group by days ###
+delays_by_days_16 <- flights16_v_delay %>%
+  group_by(FL_DATE, ORIGIN_AIRPORT_ID) %>%
+  summarize(delays = n())
+### get previous day ###
+delays_by_days_16_2 <- mutate(delays_by_days_16, 
+                           FL_DATE_2 = as.character(as.Date(FL_DATE)-1))
+delays_by_days_16_3 <- left_join(delays_by_days_16_2, delays_by_days_16, 
+                 by = c("FL_DATE_2" = "FL_DATE", 
+                        "ORIGIN_AIRPORT_ID" = "ORIGIN_AIRPORT_ID"))
+delays_by_days_16_3 <- mutate(delays_by_days_16_3, 
+                           delays_2 = rowSums(cbind(delays.x, delays.y), na.rm=TRUE))
+### add to data set ###
+flights16_v1 <- left_join(flights16_g, delays_by_days_16_3, 
+                 by = c("FL_DATE" = "FL_DATE", 
+                        "ORIGIN_AIRPORT_ID" = "ORIGIN_AIRPORT_ID"))
+flights16_v1 <- flights16_v1[, -c(66:67)]
+```
+
+```{r}
+#### DESTINATION airport delays ####
+### group by days ###
+delays_by_des_16 <- flights16_v_delay %>%
+  group_by(FL_DATE, DEST_AIRPORT_ID) %>%
+  summarize(delays_des = n())
+### get previous day ###
+delays_by_des_16_2 <- mutate(delays_by_des_16, 
+                           FL_DATE_2 = as.character(as.Date(FL_DATE)-1))
+delays_by_des_16_3 <- left_join(delays_by_des_16_2, delays_by_des_16, 
+                 by = c("FL_DATE_2" = "FL_DATE", 
+                        "DEST_AIRPORT_ID" = "DEST_AIRPORT_ID"))
+delays_by_des_16_3 <- mutate(delays_by_des_16_3, 
+                           delays_des_2 = rowSums(cbind(delays_des.x,
+                                                    delays_des.y), 
+                                              na.rm=TRUE))
+### add to data set ###
+flights16_v2 <- left_join(flights16_v1, delays_by_des_16_3, 
+                 by = c("FL_DATE" = "FL_DATE", 
+                        "DEST_AIRPORT_ID" = "DEST_AIRPORT_ID"))
+flights16_v2 <- flights16_v2[, -c(68:69)]
+summary(flights16_v2$delays_2)
+summary(flights16_v2$delays_des_2)
+```
+
+
+
+```{r}
+# Carrier name
+# "AA","American Airlines Inc."
+# "B6","JetBlue Airways"
+# "DL","Delta Air Lines Inc."
+# "EV","ExpressJet Airlines Inc."
+# "MQ","Envoy Air"
+# "OO","SkyWest Airlines Inc."
+# "UA","United Air Lines Inc."
+# "US","US Airways Inc."
+# "WN","Southwest Airlines Co."
+```
+
